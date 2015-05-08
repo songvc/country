@@ -1,0 +1,33 @@
+<div class="country-table">
+	<table class="table table-bordered table-hover">
+		<tr>
+			<th>Name</th>
+			<th>Code</th>
+			<th>Capital</th>
+			<th>Area in km2</th>
+			<th>Population</th>
+			<th>Continent</th>
+		</tr>
+		<tr ng-repeat="country in countries" ng-click="go('/countries/{{country.countryName}}/capital')">
+			<th>{{country.countryName}}</th>
+			<th>{{country.countryCode}}</th>
+			<th>{{country.capital}}</th>
+			<th>{{country.areaInSqKm|number}}</th>
+			<th>{{country.population|number}}</th>
+			<th>{{country.continentName}}</th>
+		</tr>
+	</table>
+</div>
+<br>
+<br>
+<a class="btn btn-primary btn-lg btn-block reset" href="#/" role="button">Reset</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+

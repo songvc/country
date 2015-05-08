@@ -1,0 +1,37 @@
+<h1>{{country.countryName}}</h1>
+<br>
+<div class="row">
+	<img class='myFlag img-thumbnail' ng-src="http://www.geonames.org/flags/x/{{country.countryCode|lowercase}}.gif" />
+	<img class='myImage img-thumbnail' ng-src="http://www.geonames.org/img/country/250/{{country.countryCode}}.png" />
+</div>
+<br>
+<div class="row">
+	<div class="col-sm-6">
+		<h5>Population of Country:</h5>
+		<h5>Area:</h5>
+		<h5>Capital:</h5>
+		<h5>Population of Capital:</h5>
+		<h5>3 neighbors:</h5>
+	</div>
+	<div class="col-sm-6">
+		<h5>{{country.population|number}}</h5>
+		<h5>{{country.areaInSqKm|number}}</h5>
+		<h5>{{country.capital}}</h5>
+		<h5></h5>
+		<h5></h5>
+	</div>	
+</div>
+
+
+
+
+<br>
+<br>
+
+<a class="btn btn-primary btn-lg" href="#/" role="button">Home</a>
+<a class="btn btn-default btn-lg" href="#/countries" role="button">Browse Countries</a>
+<br>
+<br>
+<br>
+<br>
+<br>
