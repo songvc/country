@@ -1,8 +1,8 @@
 angular.module('countryLibrary',[])
 	.constant('COUNTRY_API_PREFIX','http://api.geonames.org')
 	.constant('COUNTRY_COUNTRY_INFO','/countryInfoJSON?username=songvc')
-	.constant('COUNTRY_NEIGHBOR', '/neighboursJSON?geonameId={{id}}&username=songvc')
-	.constant('COUNTRY_SEARCH','/searchJSON?q={{q}}&country={{country}}&name_equals={{name_equals}}&isNameRequired={{isNameRequired}}&username=songvc')
+	.constant('COUNTRY_NEIGHBOR', '/neighboursJSON?geonameId={{ id }}&username=songvc')
+	.constant('COUNTRY_SEARCH','/searchJSON?q={{ q }}&name_equals={{ name_equals }}&isNameRequired={{ isNameRequired }}&maxRows={{rows}}&username=songvc')
 
 	.factory('countryRequest', function($http, $q, COUNTRY_API_PREFIX){
 		return function(path){
@@ -24,20 +24,21 @@ angular.module('countryLibrary',[])
 	.factory('countryNeighbor', function($http, $q, $interpolate, countryRequest, COUNTRY_NEIGHBOR){
 		return function(id){
 			var path = $interpolate(COUNTRY_NEIGHBOR)({
-				geonameId:id
+				id: id
 			});
 			return countryRequest(path);
 		}
 	})
 
 	.factory('countrySearch', function($http, $q, $interpolate, countryRequest, COUNTRY_SEARCH){
-		return function(q,country,name_equals){
+		return function(q,name_equals){
 			var path = $interpolate(COUNTRY_SEARCH)({
 				q:q,
-				country:country,
 				name_equals:name_equals,
-				isNameRequired: true
+				isNameRequired: true,
+				rows:1
 			});
+			console.log(path);
 			return countryRequest(path);
 		}
 	})

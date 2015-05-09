@@ -17,8 +17,12 @@
 		<h5>{{country.population|number}}</h5>
 		<h5>{{country.areaInSqKm|number}}</h5>
 		<h5>{{country.capital}}</h5>
-		<h5></h5>
-		<h5></h5>
+		<h5>{{searchResult[0].population|number}}</h5>
+		<h5>
+			<a href="#/countries/{{neighbor[0].countryName}}/capital">{{neighbor[0].countryName}}</a>
+			<a href="#/countries/{{neighbor[1].countryName}}/capital">{{neighbor[1].countryName}}</a>
+			<a href="#/countries/{{neighbor[2].countryName}}/capital">{{neighbor[2].countryName}}</a>
+		</h5>
 	</div>	
 </div>
 
